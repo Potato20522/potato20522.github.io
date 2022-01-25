@@ -7,6 +7,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css">
 </head>
 <body>
   <div id="app">加载中</div>
@@ -15,24 +16,43 @@
       name: 'Potato20522知识库',
 	    // 配置仓库地址
       repo: 'Potato20522/potato20522.github.io',
-      // 加载 _navbar.md
-      loadNavbar: true,
-      // 加载 _sidebar.md
-      loadSidebar: true,
+      // 加载 顶部导航栏
+      // loadNavbar: true,
+      loadNavbar: "docsify-config/_navbar.md",
+      // 加载 侧边栏
+      // loadSidebar: true,
+      loadSidebar: "docsify-config/_sidebar.md",
       autoHeader: true,
       // 切换页面后是否自动跳转到页面顶部
       auto2top: true,
-      //开启封面
-      coverpage: true,
+      //开启封面,并配置封面文件位置
+      // coverpage:true,
+      coverpage: "docsify-config/_coverpage.md",
       //只在访问主页时加载封面,true
       onlyCover: false,
-      search: 'auto', // 默认值
-      subMaxLevel: 2,
+      search: {
+        maxAge: 1800000,
+        paths: [
+          "/",
+          "/前言/"
+        ],
+        placeholder: '🔍 点我搜索 ',
+        noData: '哎呀，没有找到呀！ ',
+        // 搜索标题的最大层级, 1 - 6
+        depth: 3
+        },
+      subMaxLevel: 1,
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+  <!-- 白天黑夜主题一键切换,配合上面引入的css使用 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
+  <!--统计访问量插件-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- 谷歌统计 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script> -->
 </body>
 </html>
