@@ -12,22 +12,23 @@
 <body>
   <div id="app">加载中</div>
   <script>
+    var githubPageCdnUrl = "https://cdn.jsdelivr.net/gh/Potato20522/potato20522.github.io@master/";
     window.$docsify = {
       name: 'Potato20522知识库',
 	    // 配置仓库地址
       repo: 'Potato20522/potato20522.github.io',
       // 加载 顶部导航栏
       // loadNavbar: true,
-      loadNavbar: "docsify-config/_navbar.md",
+      loadNavbar: githubPageCdnUrl+"docsify-config/_navbar.md",
       // 加载 侧边栏
       // loadSidebar: true,
-      loadSidebar: "docsify-config/_sidebar.md",
+      loadSidebar: githubPageCdnUrl+"docsify-config/_sidebar.md",
       autoHeader: true,
       // 切换页面后是否自动跳转到页面顶部
       auto2top: true,
       //开启封面,并配置封面文件位置
       // coverpage:true,
-      coverpage: "docsify-config/_coverpage.md",
+      coverpage: githubPageCdnUrl+"docsify-config/_coverpage.md",
       //只在访问主页时加载封面,true
       onlyCover: false,
       search: {
@@ -42,6 +43,9 @@
         depth: 3
         },
       subMaxLevel: 1,
+      alias:{
+
+      }
     }
   </script>
   <!-- Docsify v4 -->
